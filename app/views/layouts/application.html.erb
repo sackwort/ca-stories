@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stories</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="sb-site">
+   	<div class="sb-toggle-left">
+      <a><img alt="Open" class="icon-menu" src="https://dl.dropboxusercontent.com/u/1098200/codecademy/stories/icons/menu-black.svg" width="24px" /></a>
+    </div>
+		<%= yield %>
+  </div><!--#sb-site-->
+
+  <div class="sb-slidebar sb-left sb-width-custom" data-sb-width=30%>
+    <ul> 
+      <li><%= link_to "Home", root_path %> </li> 
+      <li><%= link_to "About", about_path %></li> 
+      <li><%= link_to "Contact", new_signup_path %></li> 
+    </ul>
+    </div>
+  <div class="footer"> 
+    <div class="container"> 
+      <p>A Shutterbugg Project</p> 
+    </div> 
+  </div>
+    
+
+  
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script>
+  (function($) {
+    $(document).ready(function() {
+      $.slidebars();
+    });
+  }) (jQuery);
+</script>
+
+</body>
+</html>
